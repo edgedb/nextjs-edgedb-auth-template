@@ -1,0 +1,34 @@
+{
+  "name": "edgedb-nextjs-template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@edgedb/auth-nextjs": "^0.1.0",
+    "edgedb": "^1.4.1",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@edgedb/generate": "0.x",
+    "@eslint/eslintrc": "2.x",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "6.x",
+    "@typescript-eslint/parser": "6.x",
+    "autoprefixer": "^10.0.1",
+    "eslint": "8.x",
+    "eslint-config-prettier": "9.x",
+    "postcss": "^8",
+    "prettier": "3.x",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}
