@@ -68,11 +68,13 @@ Directory structure:
 
 To get started with this template, you need to:
 
-### 1. Clone the repository
+### 1. Clone the repository & install dependencies
 
 ```sh
 git clone https://github.com/beerose/edgedb-nextjs-auth-template.git
 cd edgedb-nextjs-auth-template
+
+pnpm i
 ```
 
 You can also click the "Use this template" button to create a new repository based on this template.
