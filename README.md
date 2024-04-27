@@ -260,7 +260,7 @@ the delete button based on the user's permissions.
 
 ### Modify the UI callback
 
-In the `app/auth/[...auth].tsx` file, you can find the post creation flow. You can modify this flow to include additional steps. For example, you can send a custom email to the new user or store additional data in the database.
+In the `app/auth/[...auth]/route.ts` file, you can find the user creation flow. You can modify this flow to include additional steps. For example, you can send a custom email to the new user or store additional data in the database.
 
 ## 👀 Quick look at the EdgeDB schema
 
