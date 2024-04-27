@@ -79,7 +79,15 @@ pnpm i
 
 You can also click the "Use this template" button to create a new repository based on this template.
 
-### 2. Install EdgeDB CLI
+### 2. Install EdgeDB CLI (optional)
+
+You can just use `npx edgedb`, it would do the right thing
+to automatically install and run EdgeDB CLI for you.
+
+This README will use `npx edgedb <command>` style, but if you have
+the CLI installed you can use it directly, like this: `edgedb <command>`.
+
+<details><summary>However, you can install the CLI manually</summary>
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.edgedb.com | sh
@@ -87,23 +95,17 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.edgedb.com | sh
 
 For more installation options, see the [EdgeDB installation guide](https://edgedb.com/docs/guides/install).
 
+</details>
+
 ### 3. Initialize EdgeDB project
 
 To run this project, you need to initialize a new EdgeDB project. Run the following command:
 
 ```sh
-edgedb project init
+npx edgedb project init
 ```
 
-### 4. Apply migrations
-
-To apply the initial migration, run:
-
-```sh
-edgedb migration apply
-```
-
-### 5. Set up EdgeDB Auth
+### 4. Set up EdgeDB Auth
 
 This template includes a script to set up EdgeDB Auth. It defaults to email+password authentication. Run the following command:
 
@@ -117,7 +119,7 @@ To set up other authentication providers, run:
 pnpm esr auth-setup.ts
 ```
 
-### 6. Generate types
+### 5. Generate types
 
 This template includes a script to generate TypeScript types from the EdgeDB schema. Run the following command:
 
@@ -125,7 +127,7 @@ This template includes a script to generate TypeScript types from the EdgeDB sch
 pnpm generate:all
 ```
 
-### 7. Start the development server
+### 6. Start the development server
 
 ```sh
 pnpm dev
@@ -133,12 +135,12 @@ pnpm dev
 
 Follow the instructions in the terminal to open the app in your browser.
 
-### 8. Open the EdgeDB UI
+### 7. Open the EdgeDB UI
 
 To view the database in the EdgeDB UI or make changes to the EdgeDB Auth configuration, run:
 
 ```sh
-edgedb ui
+npx edgedb ui
 ```
 
 ## ✨ Next steps
