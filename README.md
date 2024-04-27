@@ -155,7 +155,7 @@ implement a custom UI later.
 
 ### Extend the EdgeDB schema
 
-Open the `schema.esdl` file and add your own types and
+Open the `dbschema/default.esdl` file and add your own types and
 fields. You can start by adding a `Post` type with a
 `title` and `content` field or changing the
 `Item` type to include more fields. For example:
