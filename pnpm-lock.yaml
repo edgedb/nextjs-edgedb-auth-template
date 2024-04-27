@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@edgedb/generate':
-    specifier: ~0.4.1
-    version: 0.4.1(edgedb@1.5.4)
+    specifier: ^0.5.3
+    version: 0.5.3(edgedb@1.5.4)
   '@eslint/eslintrc':
     specifier: 2.x
     version: 2.1.4
@@ -129,13 +129,14 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@edgedb/generate@0.4.1(edgedb@1.5.4):
-    resolution: {integrity: sha512-5u+NSv4nE2CNUp60xVlY21nX/mAib9nsXmf/9idnGQad2yN+DhDQrlS/OWuRAC1cLAwFwg9MyQYu2KkyGQrRpA==}
-    engines: {node: '>= 12.0.0'}
+  /@edgedb/generate@0.5.3(edgedb@1.5.4):
+    resolution: {integrity: sha512-cOcCPmnmtCSD1ZwwmVZ/iIkwvtQk0loHrQIAMmFOUyfxN+nm3kff7MnmF44igPDc7D7aIwgpRo95qZqvIG+xgA==}
+    engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
-      edgedb: ^1.4.0
+      edgedb: ^1.5.0
     dependencies:
+      '@iarna/toml': 2.2.5
       edgedb: 1.5.4
     dev: true
 
@@ -422,6 +423,10 @@ packages:
 
   /@humanwhocodes/object-schema@2.0.3:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    dev: true
+
+  /@iarna/toml@2.2.5:
+    resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
 
   /@isaacs/cliui@8.0.2:
