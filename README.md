@@ -273,14 +273,14 @@ using extension auth;
 This line enables the EdgeDB Auth extension, which provides built-in authentication and authorization features.
 
 ```sql
+  scalar type Role extending enum<admin, user>;
+
   global current_user := (
     assert_single((
       select User { id, name, email, userRole }
       filter .identity = global ext::auth::ClientTokenIdentity
     ))
   );
-
-  scalar type Role extending enum<admin, user>;
 
   type User {
     required identity: ext::auth::Identity;
