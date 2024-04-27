@@ -71,7 +71,7 @@ To get started with this template, you need to:
 ### 1. Clone the repository & install dependencies
 
 ```sh
-git clone https://github.com/beerose/edgedb-nextjs-auth-template.git
+git clone https://github.com/edgedb/nextjs-edgedb-auth-template.git
 cd edgedb-nextjs-auth-template
 
 pnpm i
