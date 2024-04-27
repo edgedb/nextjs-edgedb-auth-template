@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@edgedb/auth-nextjs':
     specifier: ^0.1.0
-    version: 0.1.0(edgedb@1.4.1)(next@14.1.4)(react@18.2.0)
+    version: 0.1.0(edgedb@1.5.4)(next@14.1.4)(react@18.2.0)
   '@headlessui/react':
     specifier: ^1.7.18
     version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
@@ -18,8 +18,8 @@ dependencies:
     specifier: ^0.5.7
     version: 0.5.7(tailwindcss@3.4.3)
   edgedb:
-    specifier: ^1.4.1
-    version: 1.4.1
+    specifier: ^1.5.4
+    version: 1.5.4
   next:
     specifier: 14.1.4
     version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
@@ -33,7 +33,7 @@ dependencies:
 devDependencies:
   '@edgedb/generate':
     specifier: ~0.4.1
-    version: 0.4.1(edgedb@1.4.1)
+    version: 0.4.1(edgedb@1.5.4)
   '@eslint/eslintrc':
     specifier: 2.x
     version: 2.1.4
@@ -107,36 +107,36 @@ packages:
       regenerator-runtime: 0.14.1
     dev: true
 
-  /@edgedb/auth-core@0.1.0(edgedb@1.4.1):
+  /@edgedb/auth-core@0.1.0(edgedb@1.5.4):
     resolution: {integrity: sha512-T/WL9TuAMJ7Fx1Bd0ayRdkY+9TznQug3qfn/KAaQCox3gy+E70qc3JLz4bu7EBMwLqNW2NRBoVbIwAGRZtH0nQ==}
     peerDependencies:
       edgedb: ^1.3.6
     dependencies:
-      edgedb: 1.4.1
+      edgedb: 1.5.4
       jwt-decode: 3.1.2
     dev: false
 
-  /@edgedb/auth-nextjs@0.1.0(edgedb@1.4.1)(next@14.1.4)(react@18.2.0):
+  /@edgedb/auth-nextjs@0.1.0(edgedb@1.5.4)(next@14.1.4)(react@18.2.0):
     resolution: {integrity: sha512-jDVRLMel0L5ceoOV3d0j2WnWTVhqPaDRgzgHZzlqHj9XOgnGjJQyZdCtwMo7adW8p036nzRcwKsA+gpU8RHTUQ==}
     peerDependencies:
       edgedb: ^1.3.6
       next: ^13.5.6
       react: ^18.2.0
     dependencies:
-      '@edgedb/auth-core': 0.1.0(edgedb@1.4.1)
-      edgedb: 1.4.1
+      '@edgedb/auth-core': 0.1.0(edgedb@1.5.4)
+      edgedb: 1.5.4
       next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
     dev: false
 
-  /@edgedb/generate@0.4.1(edgedb@1.4.1):
+  /@edgedb/generate@0.4.1(edgedb@1.5.4):
     resolution: {integrity: sha512-5u+NSv4nE2CNUp60xVlY21nX/mAib9nsXmf/9idnGQad2yN+DhDQrlS/OWuRAC1cLAwFwg9MyQYu2KkyGQrRpA==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
     peerDependencies:
       edgedb: ^1.4.0
     dependencies:
-      edgedb: 1.4.1
+      edgedb: 1.5.4
     dev: true
 
   /@esbuild/aix-ppc64@0.20.2:
@@ -1250,7 +1250,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
@@ -1315,10 +1314,17 @@ packages:
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  /edgedb@1.4.1:
-    resolution: {integrity: sha512-GMLeDcTR3lSzpIQCLM6DpcHrVre+nAICA091c0Jfpkd/RANaV7+RSEnIBceDg2rHQpYdCEGW3swULaoURsAQzg==}
-    engines: {node: '>= 12.0.0'}
+  /edgedb@1.5.4:
+    resolution: {integrity: sha512-F8dXEjqt0/nP6cbBQi3acJ9XYHaJVnDym8gKBHn85JeGMXaJI6AR4K44juASTX9KWpvc4dN5lUlP8cs92ITbMw==}
+    engines: {node: '>= 18.0.0'}
     hasBin: true
+    dependencies:
+      debug: 4.3.4
+      env-paths: 3.0.0
+      semver: 7.6.0
+      which: 4.0.0
+    transitivePeerDependencies:
+      - supports-color
 
   /electron-to-chromium@1.4.727:
     resolution: {integrity: sha512-brpv4KTeC4g0Fx2FeIKytLd4UGn1zBQq5Lauy7zEWT9oqkaj5mgsxblEZIAOf1HHLlXxzr6adGViiBy5Z39/CA==}
@@ -1337,6 +1343,10 @@ packages:
       graceful-fs: 4.2.11
       tapable: 2.2.1
     dev: true
+
+  /env-paths@3.0.0:
+    resolution: {integrity: sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   /es-abstract@1.23.3:
     resolution: {integrity: sha512-e+HfNH61Bj1X9/jLc5v1owaLYuHdeHHSQlkhCBiTK8rBvKaULl/beGMxwrMXjpYrv4pz22BlY570vVePA2ho4A==}
@@ -2326,6 +2336,10 @@ packages:
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
+  /isexe@3.1.1:
+    resolution: {integrity: sha512-LpB/54B+/2J5hqQ7imZHfdU31OlgQqx7ZicVlkm9kzg9/w8GKLEcFfJl/t7DCEDueOyBAD6zCCwTO6Fzs0NoEQ==}
+    engines: {node: '>=16'}
+
   /iterator.prototype@1.1.2:
     resolution: {integrity: sha512-DR33HMMr8EzwuRL8Y9D3u2BMj8+RqSE850jfGu59kS7tbmPLzGkZmVSfyCFSDxuZiEY6Rzt3T2NA/qU+NwVj1w==}
     dependencies:
@@ -2465,7 +2479,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
-    dev: true
 
   /merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -2517,7 +2530,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
 
   /mute-stream@1.0.0:
     resolution: {integrity: sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==}
@@ -3056,7 +3068,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
-    dev: true
 
   /set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
@@ -3522,6 +3533,13 @@ packages:
     dependencies:
       isexe: 2.0.0
 
+  /which@4.0.0:
+    resolution: {integrity: sha512-GlaYyEb07DPxYCKhKzplCWBJtvxZcZMrL+4UkrTSJHHPyZU4mYYTv3qaOe77H7EODLSSopAUFAc6W8U4yqvscg==}
+    engines: {node: ^16.13.0 || >=18.0.0}
+    hasBin: true
+    dependencies:
+      isexe: 3.1.1
+
   /wrap-ansi@6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
     engines: {node: '>=8'}
@@ -3553,7 +3571,6 @@ packages:
 
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
-    dev: true
 
   /yaml@2.4.1:
     resolution: {integrity: sha512-pIXzoImaqmfOrL7teGUBt/T7ZDnyeGBWyXQBvOVhLkWLN37GXv8NMLK406UY6dS51JfcQHsmcW5cJ441bHg6Lg==}
