@@ -230,7 +230,7 @@ After that, you can open the Mailpit UI in your browser at `http://localhost:802
 
 #### Updating the SMTP settings in the EdgeDB UI
 
-To test the reset password flow with Mailpit, you need to update the SMTP settings in the EdgeDB UI. Open the EdgeDB UI with the `edgedb ui` command and navigate to the Auth tab. Go to the "SMPT" section and update the settings with the following values:
+To test the reset password flow with Mailpit, you need to update the SMTP settings in the EdgeDB UI. Open the EdgeDB UI with the `edgedb ui` command and navigate to the Auth tab. Go to the "SMTP" section and update the settings with the following values:
 
 - Host: `localhost`
 - Port: `1025`
