@@ -184,6 +184,7 @@ const itemsQuery = e.select(e.Item, (\_item) => ({
   updated: true,
   created_by: {
     name: true,
+    email: true,
   },
   // Add your new fields here
 }))
