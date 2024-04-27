@@ -71,7 +71,7 @@ To get started with this template, you need to:
 ### 1. Clone the repository & install dependencies
 
 ```sh
-git clone https://github.com/beerose/edgedb-nextjs-auth-template.git
+git clone https://github.com/edgedb/nextjs-edgedb-auth-template.git
 cd edgedb-nextjs-auth-template
 
 pnpm i
@@ -155,7 +155,7 @@ implement a custom UI later.
 
 ### Extend the EdgeDB schema
 
-Open the `schema.esdl` file and add your own types and
+Open the `dbschema/default.esdl` file and add your own types and
 fields. You can start by adding a `Post` type with a
 `title` and `content` field or changing the
 `Item` type to include more fields. For example:
@@ -184,6 +184,7 @@ const itemsQuery = e.select(e.Item, (\_item) => ({
   updated: true,
   created_by: {
     name: true,
+    email: true,
   },
   // Add your new fields here
 }))
@@ -229,7 +230,7 @@ After that, you can open the Mailpit UI in your browser at `http://localhost:802
 
 #### Updating the SMTP settings in the EdgeDB UI
 
-To test the reset password flow with Mailpit, you need to update the SMTP settings in the EdgeDB UI. Open the EdgeDB UI with the `edgedb ui` command and navigate to the Auth tab. Go to the "SMPT" section and update the settings with the following values:
+To test the reset password flow with Mailpit, you need to update the SMTP settings in the EdgeDB UI. Open the EdgeDB UI with the `edgedb ui` command and navigate to the Auth tab. Go to the "SMTP" section and update the settings with the following values:
 
 - Host: `localhost`
 - Port: `1025`
@@ -259,7 +260,7 @@ the delete button based on the user's permissions.
 
 ### Modify the UI callback
 
-In the `app/auth/[...auth].tsx` file, you can find the post creation flow. You can modify this flow to include additional steps. For example, you can send a custom email to the new user or store additional data in the database.
+In the `app/auth/[...auth]/route.ts` file, you can find the user creation flow. You can modify this flow to include additional steps. For example, you can send a custom email to the new user or store additional data in the database.
 
 ## 👀 Quick look at the EdgeDB schema
 
@@ -272,14 +273,14 @@ using extension auth;
 This line enables the EdgeDB Auth extension, which provides built-in authentication and authorization features.
 
 ```sql
+  scalar type Role extending enum<admin, user>;
+
   global current_user := (
     assert_single((
       select User { id, name, email, userRole }
       filter .identity = global ext::auth::ClientTokenIdentity
     ))
   );
-
-  scalar type Role extending enum<admin, user>;
 
   type User {
     required identity: ext::auth::Identity;
