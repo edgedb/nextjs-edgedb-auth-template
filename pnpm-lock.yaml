@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@edgedb/auth-nextjs':
-    specifier: ^0.1.0
-    version: 0.1.0(edgedb@1.5.4)(next@14.1.4)(react@18.2.0)
+    specifier: ^0.2.0
+    version: 0.2.0(edgedb@1.5.4)(next@14.1.4)(react@18.2.0)
   '@headlessui/react':
     specifier: ^1.7.18
     version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
@@ -107,8 +107,8 @@ packages:
       regenerator-runtime: 0.14.1
     dev: true
 
-  /@edgedb/auth-core@0.1.0(edgedb@1.5.4):
-    resolution: {integrity: sha512-T/WL9TuAMJ7Fx1Bd0ayRdkY+9TznQug3qfn/KAaQCox3gy+E70qc3JLz4bu7EBMwLqNW2NRBoVbIwAGRZtH0nQ==}
+  /@edgedb/auth-core@0.2.0-beta.1(edgedb@1.5.4):
+    resolution: {integrity: sha512-y48/OkAIRbPwI2PJEu06OYqLXbIf0wWgveJh8DdV5VLnZnt5bLaCAY4BJe7PfShYDuAyt58eGLXjqdvtJ+WU8w==}
     peerDependencies:
       edgedb: ^1.3.6
     dependencies:
@@ -116,14 +116,14 @@ packages:
       jwt-decode: 3.1.2
     dev: false
 
-  /@edgedb/auth-nextjs@0.1.0(edgedb@1.5.4)(next@14.1.4)(react@18.2.0):
-    resolution: {integrity: sha512-jDVRLMel0L5ceoOV3d0j2WnWTVhqPaDRgzgHZzlqHj9XOgnGjJQyZdCtwMo7adW8p036nzRcwKsA+gpU8RHTUQ==}
+  /@edgedb/auth-nextjs@0.2.0(edgedb@1.5.4)(next@14.1.4)(react@18.2.0):
+    resolution: {integrity: sha512-UoqGorQZuHhs839huV+/Kqq3AoRBpy2npL3z641CFu+8aTlc9yAFaSl71usLQyFZVWKWGhbitFXDJTCGCyFG7A==}
     peerDependencies:
       edgedb: ^1.3.6
-      next: ^13.5.6
+      next: '>=13.5.6 <15.0.0'
       react: ^18.2.0
     dependencies:
-      '@edgedb/auth-core': 0.1.0(edgedb@1.5.4)
+      '@edgedb/auth-core': 0.2.0-beta.1(edgedb@1.5.4)
       edgedb: 1.5.4
       next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
