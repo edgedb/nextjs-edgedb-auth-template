@@ -6,7 +6,7 @@ interface Props {
   items: (Omit<Item, "created_by"> & {
     created_by: {
       name: string;
-      email: string;
+      email: string | null;
     };
   })[];
 }
