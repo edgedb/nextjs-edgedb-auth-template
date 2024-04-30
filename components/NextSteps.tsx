@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   CircleStackIcon,
   ListBulletIcon,
@@ -17,7 +18,7 @@ const timeline = [
     description: (
       <div>
         Click the sign up button in the top right corner to create an account.
-        We're using the built-in authentication for this starter but you can
+        We&apos;re using the built-in authentication for this starter but you can
         implement a custom UI later.
         <img
           src="sign-up.png"
@@ -81,8 +82,8 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     description: (
       <div>
         Open the EdgeDB UI with the <code>edgedb ui</code> command and navigate
-        to the Auth tab. Go to the "Providers" section and add a new Auth
-        provider by clicking the "Add Provider" button and following the
+        to the Auth tab. Go to the &quot;Providers&quot; section and add a new Auth
+        provider by clicking the &quot;Add Provider&quot; button and following the
         instructions.
         <img
           src="add-provider.png"
@@ -99,7 +100,7 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     description: (
       <div>
         Sign out of your account and try to reset your password. Click the
-        "Forgot Password" link on the login page and follow the instructions to
+        &quot;Forgot Password&quot; link on the login page and follow the instructions to
         reset your password. You should receive an email with a link to reset
         your password. To test it locally, you can use the Mailpit tool. You can
         find setup instructions in the README.md file.
@@ -132,10 +133,10 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     content: "Test access policies",
     description: (
       <p>
-        Try deleting an item that you don't own. You shouldn't be able to delete
+        Try deleting an item that you don&apos;t own. You shouldn&apos;t be able to delete
         it. You can test this by creating a new item and then trying to delete
         it with a different account. As a next step you can conditionally render
-        the delete button based on the user's permissions.
+        the delete button based on the user&apos;s permissions.
         <img
           src="delete-item.png"
           alt="Delete item"
@@ -162,7 +163,7 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     content: "Deploy your app",
     description: (
       <div>
-        Once you're happy with your changes, you can deploy your app to the
+        Once you&apos;re happy with your changes, you can deploy your app to the
         EdgeDB Cloud and Vercel. Follow the deployment instructions in the{" "}
         <a
           className="
