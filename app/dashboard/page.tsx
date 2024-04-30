@@ -1,11 +1,11 @@
-import { createClient } from "edgedb";
+import { auth } from "@/edgedb";
 import e from "@/dbschema/edgeql-js";
 
 import Items from "@/components/Items";
 import Link from "next/link";
 
 export default async function Home() {
-  const client = createClient();
+  const { client } = auth.getSession();
 
   const itemsQuery = e.select(e.Item, (_item) => ({
     id: true,
