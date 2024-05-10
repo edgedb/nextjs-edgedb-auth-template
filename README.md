@@ -93,7 +93,7 @@ the CLI installed you can use it directly, like this: `edgedb <command>`.
 curl --proto '=https' --tlsv1.2 -sSf https://sh.edgedb.com | sh
 ```
 
-For more installation options, see the [EdgeDB installation guide](https://edgedb.com/docs/guides/install).
+For more installation options, see the [EdgeDB installation guide](https://docs.edgedb.com/cli).
 
 </details>
 
