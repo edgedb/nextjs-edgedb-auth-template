@@ -15,7 +15,9 @@ module default {
       constraint exclusive;
     };
     required name: str;
-    email: str;
+    email: str {
+      constraint exclusive;
+    };
   
     userRole: Role {
       default := "user";
