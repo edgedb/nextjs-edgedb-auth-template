@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
 import { auth } from "@/edgedb";
+import { signout } from "@/app/actions";
 import { redirect } from "next/navigation";
 
 const handleSignOut = async () => {
   "use server";
 
-  const { signout } = auth.createServerActions();
   await signout();
 };
 
