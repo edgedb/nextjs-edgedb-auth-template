@@ -179,7 +179,7 @@ to include your new fields. You can add a new field to the query or
 change the existing fields to include your new data.
 
 ```ts
-const itemsQuery = e.select(e.Item, (\_item) => ({
+const itemsQuery = e.select(e.Item, (_item) => ({
   id: true,
   name: true,
   created: true,
@@ -279,7 +279,7 @@ This line enables the EdgeDB Auth extension, which provides built-in authenticat
 
   global current_user := (
     assert_single((
-      select User { id, name, email, userRole }
+      select User
       filter .identity = global ext::auth::ClientTokenIdentity
     ))
   );
@@ -303,11 +303,11 @@ This line enables the EdgeDB Auth extension, which provides built-in authenticat
   }
 ```
 
-This block defines the `Role` and `User` types. The `User` type includes fields for the user's identity, name, email, role, and timestamps for when the user was created and updated.
+This block defines the `Role` and `User` types.
 
 - The `identity` field is an EdgeDB Auth identity that uniquely identifies the user. It's created when the user signs up and is used for authentication. We link it to our custom `User` type with the `ext::auth::Identity` type.
 
-- The `global current_user` function retrieves the current user based on the client token identity. It selects the user's `id`, `name`, `email`, and `userRole` fields from the `User` type.
+- The `global current_user` will be set to the `User` object is linked to the currently signed in user through the `ext::auth::ClientTokenIdentity` which is set by the EdgeDB auth server library for signed in users.
 
 - The `userRole` field is an enum that defines the user's role. It defaults to "user" but can be set to "admin" for users with admin privileges.
 
