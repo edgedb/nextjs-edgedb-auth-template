@@ -72,7 +72,7 @@ To get started with this template, you need to:
 
 ```sh
 git clone https://github.com/edgedb/nextjs-edgedb-auth-template.git
-cd edgedb-nextjs-auth-template
+cd nextjs-edgedb-auth-template
 
 pnpm i
 ```
