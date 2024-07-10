@@ -5,11 +5,15 @@ import e from "@/dbschema/edgeql-js";
 export const { GET, POST } = auth.createAuthRouteHandlers({
   async onBuiltinUICallback({ error, tokenData, isSignUp }) {
     if (error) {
-      console.error("sign in failed", error);
+      console.error("Authentication failed: ", error);
+      redirect("/error?error=auth-failed");
     }
+
     if (!tokenData) {
-      console.log("email verification required");
+      console.error("Email verification required.");
+      redirect("/error?error=email-verification-required");
     }
+
     if (isSignUp) {
       const client = auth.getSession().client;
 
