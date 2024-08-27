@@ -2,7 +2,7 @@ import { Item } from "@/dbschema/interfaces";
 import DeleteItem from "./DeleteItem";
 import { auth } from "@/edgedb";
 
-interface Props {
+export interface Props {
   items: (Omit<Item, "created_by"> & {
     created_by: {
       name: string;

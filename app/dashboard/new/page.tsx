@@ -1,6 +1,5 @@
 import AddItem from "@/components/AddItem";
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
-import e from "@/dbschema/edgeql-js";
 import { auth } from "@/edgedb";
 import Link from "next/link";
 
@@ -8,11 +7,10 @@ const addItem = async (name: string) => {
   "use server";
   const session = auth.getSession();
 
-  const newItemQuery = e.insert(e.Item, {
-    name,
-  });
-
-  newItemQuery.run(session.client);
+  await session.client.query(
+    "with name := <str>$name insert Item { name := name }",
+    { name },
+  );
 };
 
 export default function Example() {

@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/edgedb";
-import e from "@/dbschema/edgeql-js";
 
 export const { GET, POST } = auth.createAuthRouteHandlers({
   async onBuiltinUICallback({ error, tokenData, isSignUp }) {

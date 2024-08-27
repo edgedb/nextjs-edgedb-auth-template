@@ -1,24 +1,23 @@
 import { auth } from "@/edgedb";
-import e from "@/dbschema/edgeql-js";
 
-import Items from "@/components/Items";
+import Items, { Props } from "@/components/Items";
 import Link from "next/link";
 
 export default async function Home() {
   const { client } = auth.getSession();
 
-  const itemsQuery = e.select(e.Item, (_item) => ({
-    id: true,
-    name: true,
-    created: true,
-    updated: true,
-    created_by: {
-      name: true,
-      email: true,
-    },
-  }));
-
-  const items = await itemsQuery.run(client);
+  const items = await client.query<Props["items"][number]>(`
+    select Item {
+      id,
+      name,
+      created,
+      updated,
+      created_by: {
+        name,
+        email
+      }
+    };
+  `);
 
   return (
     <>
