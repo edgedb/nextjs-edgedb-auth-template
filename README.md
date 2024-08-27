@@ -2,7 +2,7 @@
 
 This starter is designed to help you get up and running with EdgeDB and Next.js quickly. It includes a basic setup for authentication, EdgeDB schema, and a UI to get you started. Below you can find the steps to set up the project and start building your app as well as some ideas for extending it further.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fedgedb%2Fnextjs-edgedb-auth-template&env=EDGEDB_INSTANCE,EDGEDB_SECRET_KEY&envDescription=EdgeDB%20Cloud%20connection%20parameters&envLink=https%3A%2F%2Fdocs.edgedb.com%2Fcloud%2Fdeploy%2Fvercel&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22edgedb%22%2C%22productSlug%22%3A%22edgedb%22%7D%5D)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fedgedb%2Fnextjs-edgedb-auth-template&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22edgedb%22%2C%22productSlug%22%3A%22edgedb%22%7D%5D)
 
 This template includes:
 
