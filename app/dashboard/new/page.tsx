@@ -3,6 +3,8 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { auth } from "@/edgedb";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 const addItem = async (name: string) => {
   "use server";
   const session = auth.getSession();
