@@ -1,13 +1,14 @@
 {
   "private": true,
+  "packageManager": "pnpm@9.4.0",
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "auth:setup": "pnpm esr password-auth-setup.ts",
-    "generate:edgeql": "npx @edgedb/generate edgeql-js",
-    "generate:interfaces": "npx @edgedb/generate interfaces",
+    "generate:edgeql": "pnpm exec @edgedb/generate edgeql-js",
+    "generate:interfaces": "pnpm exec @edgedb/generate interfaces",
     "generate:all": "pnpm generate:edgeql && pnpm generate:interfaces"
   },
   "dependencies": {
