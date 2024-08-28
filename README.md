@@ -181,17 +181,18 @@ to include your new fields. You can add a new field to the query or
 change the existing fields to include your new data.
 
 ```ts
-const itemsQuery = e.select(e.Item, (_item) => ({
-  id: true,
-  name: true,
-  created: true,
-  updated: true,
-  created_by: {
-    name: true,
-    email: true,
-  },
-  // Add your new fields here
-}))
+const items = await client.query<Props["items"][number]>(`
+  select Item {
+    id,
+    name,
+    created,
+    updated,
+    created_by: {
+      name,
+      email
+    }
+  };
+`);
 ```
 
 ### Add more Auth providers
