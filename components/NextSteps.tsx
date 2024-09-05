@@ -11,6 +11,7 @@ import {
   CheckCircleIcon,
   CloudIcon,
   ArrowTopRightOnSquareIcon,
+  EnvelopeOpenIcon,
 } from "@heroicons/react/20/solid";
 
 const timeline = [
@@ -62,6 +63,7 @@ const timeline = [
         for production.
       </div>
     ),
+    icon: EnvelopeOpenIcon,
   },
   {
     content: "Sign up to the platform",
