@@ -1,9 +1,10 @@
 let baseUrl: string | null = null;
 
-export function getBaseUrl() {
+export function getBaseUrl(): string {
   if (baseUrl !== null) {
     return baseUrl;
   }
+  baseUrl = "http://localhost:3000";
 
   const isVercel = process.env.VERCEL === "1";
   if (isVercel) {
