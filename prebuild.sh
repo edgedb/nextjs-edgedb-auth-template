@@ -23,5 +23,6 @@ fi
 
 echo "Storage ready, running migrations and code generation."
 
+./maybe-initialize-database.sh
 pnpm exec edgedb migrate
 pnpm run generate:all
