@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { ReactNode } from "react";
 import {
   CircleStackIcon,
   ListBulletIcon,
@@ -9,17 +10,66 @@ import {
   BeakerIcon,
   CheckCircleIcon,
   CloudIcon,
+  ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/20/solid";
 
 const timeline = [
   {
-    id: 0,
+    content: "Finish setting up Email + Password configuration",
+    description: (
+      <div>
+        We&apos;ve set up the Email + Password provider for you, however in
+        order to really use an email-based factor, you will need to set up SMTP
+        to enable sending outgoing emails. Open the EdgeDB UI with the{" "}
+        <code>edgedb ui</code> command or through the EdgeDB Cloud Console and
+        navigate to the Auth tab. Go to the &quot;SMTP&quot; section and add
+        your SMTP credentials. We recommend using a service like{" "}
+        <a
+          href="https://mailtrap.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+          text-primary
+          hover:underline
+          focus:ring-2
+          focus:ring-offset-2
+          focus:ring-primary
+          focus:ring-offset-white
+          focus:outline-none
+          focus:ring-opacity-60
+        "
+        >
+          Mailtrap
+        </a>{" "}
+        for testing, and a service like{" "}
+        <a
+          href="https://resend.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+          text-primary
+          hover:underline
+          focus:ring-2
+          focus:ring-offset-2
+          focus:ring-primary
+          focus:ring-offset-white
+          focus:outline-none
+          focus:ring-opacity-60
+        "
+        >
+          Resend
+        </a>{" "}
+        for production.
+      </div>
+    ),
+  },
+  {
     content: "Sign up to the platform",
     description: (
       <div>
         Click the sign up button in the top right corner to create an account.
-        We&apos;re using the built-in authentication for this starter but you can
-        implement a custom UI later.
+        We&apos;re using the built-in authentication for this starter but you
+        can implement a custom UI later.
         <img
           src="sign-up.png"
           alt="Sign up"
@@ -30,7 +80,6 @@ const timeline = [
     icon: UserCircleIcon,
   },
   {
-    id: 1,
     content: "Extend the EdgeDB schema",
     description: (
       <div>
@@ -52,7 +101,6 @@ const timeline = [
     icon: CircleStackIcon,
   },
   {
-    id: 2,
     content: "Edit the EdgeDB query",
     description: (
       <div>
@@ -77,14 +125,13 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     icon: ListBulletIcon,
   },
   {
-    id: 3,
     content: "Add more Auth providers",
     description: (
       <div>
         Open the EdgeDB UI with the <code>edgedb ui</code> command and navigate
-        to the Auth tab. Go to the &quot;Providers&quot; section and add a new Auth
-        provider by clicking the &quot;Add Provider&quot; button and following the
-        instructions.
+        to the Auth tab. Go to the &quot;Providers&quot; section and add a new
+        Auth provider by clicking the &quot;Add Provider&quot; button and
+        following the instructions.
         <img
           src="add-provider.png"
           alt="Auth providers"
@@ -95,15 +142,14 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     icon: ShieldCheckIcon,
   },
   {
-    id: 4,
     content: "Test the reset password flow",
     description: (
       <div>
         Sign out of your account and try to reset your password. Click the
-        &quot;Forgot Password&quot; link on the login page and follow the instructions to
-        reset your password. You should receive an email with a link to reset
-        your password. To test it locally, you can use the Mailpit tool. You can
-        find setup instructions in the README.md file.
+        &quot;Forgot Password&quot; link on the login page and follow the
+        instructions to reset your password. You should receive an email with a
+        link to reset your password. To test it locally, you can use the Mailpit
+        tool. You can find setup instructions in the README.md file.
         <img
           src="reset-password.png"
           alt="Reset password"
@@ -114,7 +160,6 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     icon: AtSymbolIcon,
   },
   {
-    id: 5,
     content: 'Extend the "New Item" form',
     description: (
       <div>
@@ -129,14 +174,14 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     icon: PencilSquareIcon,
   },
   {
-    id: 6,
     content: "Test access policies",
     description: (
       <p>
-        Try deleting an item that you don&apos;t own. You shouldn&apos;t be able to delete
-        it. You can test this by creating a new item and then trying to delete
-        it with a different account. As a next step you can conditionally render
-        the delete button based on the user&apos;s permissions.
+        Try deleting an item that you don&apos;t own. You shouldn&apos;t be able
+        to delete it. You can test this by creating a new item and then trying
+        to delete it with a different account. As a next step you can
+        conditionally render the delete button based on the user&apos;s
+        permissions.
         <img
           src="delete-item.png"
           alt="Delete item"
@@ -147,7 +192,6 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     icon: BeakerIcon,
   },
   {
-    id: 7,
     content: "Modify the EdgeDB Auth UI callback",
     description: (
       <div>
@@ -159,7 +203,6 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     icon: CheckCircleIcon,
   },
   {
-    id: 8,
     content: "Deploy your app",
     description: (
       <div>
@@ -185,7 +228,10 @@ const itemsQuery = e.select(e.Item, (_item) => ({
     ),
     icon: CloudIcon,
   },
-];
+].map((step, idx) => ({
+  ...step,
+  id: idx,
+}));
 
 export default function NextSteps() {
   return (
@@ -226,5 +272,34 @@ export default function NextSteps() {
         </ul>
       </div>
     </div>
+  );
+}
+
+function ExternalLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+      text-primary
+      hover:underline
+      focus:ring-2
+      focus:ring-offset-2
+      focus:ring-primary
+      focus:ring-offset-white
+      focus:outline-none
+      focus:ring-opacity-60
+    "
+    >
+      {children}
+      <ArrowTopRightOnSquareIcon />
+    </a>
   );
 }
