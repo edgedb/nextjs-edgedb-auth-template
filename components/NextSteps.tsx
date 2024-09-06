@@ -25,42 +25,10 @@ const timeline = [
         <code>edgedb ui</code> command or through the EdgeDB Cloud Console and
         navigate to the Auth tab. Go to the &quot;SMTP&quot; section and add
         your SMTP credentials. We recommend using a service like{" "}
-        <a
-          href="https://mailtrap.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-          text-primary
-          hover:underline
-          focus:ring-2
-          focus:ring-offset-2
-          focus:ring-primary
-          focus:ring-offset-white
-          focus:outline-none
-          focus:ring-opacity-60
-        "
-        >
-          Mailtrap
-        </a>{" "}
-        for testing, and a service like{" "}
-        <a
-          href="https://resend.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-          text-primary
-          hover:underline
-          focus:ring-2
-          focus:ring-offset-2
-          focus:ring-primary
-          focus:ring-offset-white
-          focus:outline-none
-          focus:ring-opacity-60
-        "
-        >
-          Resend
-        </a>{" "}
-        for production.
+        <ExternalLink href="https://mailtrap.io/">Mailtrap</ExternalLink> for
+        testing, and a service like{" "}
+        <ExternalLink href="https://resend.com/">Resend</ExternalLink> for
+        production.
       </div>
     ),
     icon: EnvelopeOpenIcon,
@@ -210,21 +178,9 @@ const itemsQuery = e.select(e.Item, (_item) => ({
       <div>
         Once you&apos;re happy with your changes, you can deploy your app to the
         EdgeDB Cloud and Vercel. Follow the deployment instructions in the{" "}
-        <a
-          className="
-          text-primary
-          hover:underline
-          focus:ring-2
-          focus:ring-offset-2
-          focus:ring-primary
-          focus:ring-offset-white
-          focus:outline-none
-          focus:ring-opacity-60
-        "
-          href='"https://docs.edgedb.com/guides/tutorials/nextjs_app_router#deploying-to-vercel"'
-        >
+        <ExternalLink href="https://docs.edgedb.com/guides/tutorials/nextjs_app_router#deploying-to-vercel">
           EdgeDB documentation
-        </a>
+        </ExternalLink>
         .
       </div>
     ),
@@ -291,17 +247,20 @@ function ExternalLink({
       rel="noopener noreferrer"
       className="
       text-primary
-      hover:underline
+      underline
       focus:ring-2
       focus:ring-offset-2
       focus:ring-primary
       focus:ring-offset-white
       focus:outline-none
       focus:ring-opacity-60
-    "
+      inline-flex
+      gap-px
+      items-center
+      "
     >
       {children}
-      <ArrowTopRightOnSquareIcon />
+      <ArrowTopRightOnSquareIcon aria-hidden className="h-3 w-3" />
     </a>
   );
 }
