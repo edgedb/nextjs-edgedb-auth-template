@@ -1,6 +1,7 @@
 import { auth } from "@/edgedb";
 import Link from "next/link";
 import NextSteps from "@/components/NextSteps";
+import { EdgeDB_Vercel } from "@/components/Logo";
 
 export default async function Home() {
   const session = auth.getSession();
@@ -51,8 +52,9 @@ export default async function Home() {
       </header>
 
       <div className="relative isolate px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-2xl pt-16 sm:pt-24 lg:pt-32">
-          <div className="text-center">
+        <div className="mx-auto max-w-2xl pt-16 sm:pt-24 lg:pt-32 flex flex-col items-center">
+          <EdgeDB_Vercel />
+          <div className="text-center mt-10">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               EdgeDB Next.js Starter
             </h1>
