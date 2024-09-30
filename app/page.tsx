@@ -15,39 +15,40 @@ export default async function Home() {
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
-          <div className="flex flex-1 justify-end space-x-2">
-            {!signedIn ? (
-              <>
-                <Link
-                  href={auth.getBuiltinUIUrl()}
-                  prefetch={false}
-                  className="text-sm font-semibold leading-6 text-gray-800"
-                >
-                  <button className="ring-2 ring-inset ring-primary bg-primarylight px-4 py-2 rounded-md">
-                    Sign in
-                  </button>
-                </Link>
-                <Link
-                  href={auth.getBuiltinUISignUpUrl()}
-                  prefetch={false}
-                  className="text-sm font-semibold leading-6 text-gray-900"
-                >
-                  <button className="bg-primary px-4 py-2 rounded-md text-white">
-                    Sign up
-                  </button>
-                </Link>
-              </>
-            ) : (
+          <a className='contents' href='github.com/edgedb/nextjs-edgedb-auth-template' target='_blank' rel="noopener noreferrer">
+            <img src="/github.png" alt="GitHub" className="h-6 block hover:scale-105 transform transition duration-300 ease-in-out" />
+          </a>
+          {!signedIn ? (
+            <div className="space-x-4">
               <Link
-                href="dashboard"
+                href={auth.getBuiltinUIUrl()}
+                prefetch={false}
+                className="text-sm font-semibold leading-6 text-gray-800"
+              >
+                <button className="ring-2 ring-inset ring-primary bg-primarylight px-4 py-2 rounded-md">
+                  Sign in
+                </button>
+              </Link>
+              <Link
+                href={auth.getBuiltinUISignUpUrl()}
+                prefetch={false}
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
                 <button className="bg-primary px-4 py-2 rounded-md text-white">
-                  Dashboard
+                  Sign up
                 </button>
               </Link>
-            )}
-          </div>
+            </div>
+          ) : (
+            <Link
+              href="dashboard"
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              <button className="bg-primary px-4 py-2 rounded-md text-white">
+                Dashboard
+              </button>
+            </Link>
+          )}
         </nav>
       </header>
 
