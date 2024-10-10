@@ -15,7 +15,7 @@ export default async function Home() {
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
-          <a className='contents' href='github.com/edgedb/nextjs-edgedb-auth-template' target='_blank' rel="noopener noreferrer">
+          <a className='contents' href='https://github.com/edgedb/nextjs-edgedb-auth-template' target='_blank' rel="noopener noreferrer">
             <img src="/github.png" alt="GitHub" className="h-6 block hover:scale-105 transform transition duration-300 ease-in-out" />
           </a>
           {!signedIn ? (
