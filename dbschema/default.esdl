@@ -30,6 +30,15 @@ module default {
       rewrite insert using (datetime_of_statement());
       rewrite update using (datetime_of_statement());
     }
+
+    access policy current_user_has_full_access
+      allow all
+      using (.id ?= global current_user.id);
+    access policy admin_has_full_access
+      allow all
+      using (global current_user.userRole ?= Role.admin);
+    access policy everyone_insert_only
+      allow insert;
   }
 
   type Item {
