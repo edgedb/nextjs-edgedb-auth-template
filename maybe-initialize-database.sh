@@ -41,7 +41,8 @@ main() {
         echo "Auth config is empty. Configuring auth..."
         pnpm exec tsx auth-initialize.ts
     else
-        echo "Auth config is not empty. Skipping auth configuration."
+        echo "Auth config is not empty. Updating auth config..."
+        pnpm exec tsx auth-update.ts
     fi
 }
 
