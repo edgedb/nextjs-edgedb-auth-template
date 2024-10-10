@@ -28,6 +28,9 @@ is_auth_config_empty() {
 }
 
 main() {
+    local curr_branch
+    curr_branch=$(pnpm exec edgedb query "select sys::get_current_branch();")
+    echo "Current branch: $curr_branch"
     # Check if the schema is empty
     if is_schema_empty; then
         echo "Schema is empty. Running migrations..."
