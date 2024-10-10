@@ -13,10 +13,8 @@ ${SET_CONFIG} ext::auth::AuthConfig::allowed_redirect_urls := {
 `;
 
 const SETUP_UI_CONFIG = `
-${SET_CONFIG} ext::auth::UIConfig := {
-  redirect_to := "${new URL("auth/builtin/callback", baseUrl)}",
-  redirect_to_on_signup := "${new URL("auth/builtin/callback?isSignUp=true", baseUrl)}",
-};
+${SET_CONFIG} ext::auth::UIConfig::redirect_to := "${new URL("auth/builtin/callback", baseUrl)}";
+${SET_CONFIG} ext::auth::UIConfig::redirect_to_on_signup := "${new URL("auth/builtin/callback?isSignUp=true", baseUrl)}";
 `;
 
 async function main() {
