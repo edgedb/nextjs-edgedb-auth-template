@@ -58,7 +58,7 @@ export default async function Home() {
           <div className="text-center mt-10">
             <h1 className="text-4xl py-2 font-bold tracking-tight text-gray-900 sm:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#259474] to-[#1A67FF]
           ">
-              EdgeDB Next.js Starter
+              EdgeDB Next.js Auth Template
             </h1>
             <p className="mt-6 text-base leading-7 text-gray-600">
               Welcome to the EdgeDB Next.js Starter. This starter is designed to
