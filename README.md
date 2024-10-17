@@ -115,12 +115,6 @@ This template includes a script to set up EdgeDB Auth. It defaults to email+pass
 pnpm auth:setup
 ```
 
-To set up other authentication providers, run:
-
-```sh
-pnpm esr auth-setup.ts
-```
-
 ### 5. Generate types
 
 This template includes a script to generate TypeScript types from the EdgeDB schema. Run the following command:

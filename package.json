@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "auth:setup": "pnpm esr password-auth-setup.ts",
+    "auth:setup": "npx tsx auth-initialize.ts",
     "generate:edgeql": "pnpm exec generate edgeql-js",
     "generate:interfaces": "pnpm exec generate interfaces",
     "generate:all": "pnpm generate:edgeql && pnpm generate:interfaces"
@@ -35,7 +35,6 @@
     "@typescript-eslint/eslint-plugin": "6.x",
     "@typescript-eslint/parser": "6.x",
     "autoprefixer": "^10.4.20",
-    "esbuild-runner": "^2.2.2",
     "eslint": "8.x",
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "9.x",
